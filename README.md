@@ -84,4 +84,4 @@ python clipmesh.py --help
 
 ## License and acknolwedgements
 
-This codebase was built using the [CLIPMesh-SMPLX repo](https://github.com/NasirKhalid24/CLIPMesh-SMPLX), and similarly makes heavy use of [nvdiffmodeling](https://github.com/NVlabs/nvdiffmodeling), which uses the NVIDIA Source Code License.
+This codebase was built using the [CLIPMesh-SMPLX repo](https://github.com/NasirKhalid24/CLIPMesh-SMPLX) (which is also MIT licensed), and similarly makes heavy use of [nvdiffmodeling](https://github.com/NVlabs/nvdiffmodeling), which uses the NVIDIA Source Code License. For more details regarding the NVIDIA license please visit [their repo](https://github.com/NVlabs/nvdiffmodeling/blob/main/LICENSE.txt).
