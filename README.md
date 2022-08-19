@@ -27,12 +27,14 @@ Example with a prompt from the paper that works well:
 ```sh
 python clipmesh.py --text "a matte painting of a bonsai tree; trending on artstation"
 ```
+![image](https://user-images.githubusercontent.com/5475622/185275526-56526e27-8fa9-44c9-9c87-dcb3d5d940aa.png)
 
 Example with a prompt from the paper that is significantly worse:
 
 ```sh
-python clipmesh.py --text "a red chair"
+python clipmesh.py --text "a cowboy hat"
 ```
+![image](https://user-images.githubusercontent.com/5475622/185278786-7b08b149-4d53-4917-b211-4a478467adc4.png)
 
 Note that config file `configs/arxiv.yaml` intends to mimic the algorithm described in the paper as closely as possibly (there currently is no official public implementation). 
 The default config (loaded w/o a `--path` arg) has a few differences, e.g., the use of a TV weight on the texture maps (used in the CLIPMesh-SMPLX repo), and negative prompts for "face" and "text" (without them, I found CLIP had a tendency to "stamp" faces and text into textures as well as geometry).
