@@ -2,7 +2,7 @@
 
 This is an unofficial implementation of CLIPMesh (https://arxiv.org/abs/2203.13333), a method for text2mesh using CLIP.
 
-The results generated using this repo are currently hit-or-miss - for the example prompts shown in the paper and on the website, some are significantly worse than the results shown, but some are comparable. Final mesh quality is not great but it seems to be comparable to Figure 3(i) and (j) in the paper. If you have any suggestions or find any particularly good hyperparameters feel free to open an issue or PR and I'll gladly merge them in.
+The results generated using this repo are currently hit-or-miss: for the example prompts shown in the paper and on the website, some are significantly worse than the results shown, but some are comparable. Final mesh quality is not great but it seems to be comparable to Figure 3(i) and (j) in the paper. If you have any suggestions or find any particularly good hyperparameters feel free to open an issue or PR and I'll gladly merge them in.
 
 ## Install
 
@@ -72,6 +72,6 @@ The default config (loaded w/o a `--path` arg) has a few differences, e.g., the 
     a table with oranges on it
 </details>
 
-## License
+## License and acknolwedgements
 
-This codebase was built using the CLIPMesh-SMPLX repo, and similarly makes heavy use of nvdiffmodeling, which uses the NVIDIA Source Code License.
+This codebase was built using the [CLIPMesh-SMPLX repo](https://github.com/NasirKhalid24/CLIPMesh-SMPLX), and similarly makes heavy use of [nvdiffmodeling](https://github.com/NVlabs/nvdiffmodeling), which uses the NVIDIA Source Code License.
