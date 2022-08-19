@@ -1,0 +1,17 @@
+# No mention of blur
+blur: false
+
+# No mention of TV weight
+TV_weight: 0.0
+
+# No mention of displacement
+optim: # from [shape, texture, normal, specular, displacement]
+- shape
+- texture
+- normal
+
+# No mention of notex training
+notex_epochs: 0
+
+# No mention of negative text
+negative_text: null

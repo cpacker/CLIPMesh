@@ -1,0 +1,37 @@
+laplacian_factor: 50
+#laplacian_on_fine_mesh: true
+
+# Do the notex pretraining with entirely notex batches (no textures at all)
+# This seems to help prevent CLIP "stamping" images into textures
+notex_batch_size: 64
+
+# Use heavy blurring for the first 75% of training
+# blur_epochs: 750  # if blur = True, will default to all epochs
+# blur: true
+# blur_kernel:
+# - 11
+# - 11
+# blur_sigma:
+# - 5
+# - 5
+
+# Reduce the offset to prevent objects from clipping out-of-frame by increasing the lowest FOV
+# 30 -> 40
+cameras:
+  main:
+    azim:
+    - 0.0
+    - 360.0
+    dist:
+    - 5.0
+    - 5.0
+    elev:
+    - 0.0
+    - 100.0
+    fov:
+    - 40.0
+    - 60.0
+    offset:
+    - 0.0
+    - 0.15
+    - 0.0

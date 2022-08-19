@@ -1,0 +1,90 @@
+loop: single
+
+text: an armchair in the shape of an avocado
+negative_text:
+- face
+- text
+negative_text_weight: 1.0
+
+model_folder: ./models
+uv_path: ./assets/sphere.obj
+uv_mask_path: null
+output_path: ./output/
+CLIP: ViT-B/32
+
+render: diffuse # from [diffuse, pbr, normal, tangent]
+gpu: 0
+
+seed: 42
+render_res: 256
+texture_res: 256
+rand_bkg: true
+debug_log: true
+
+epochs: 1000
+notex_epochs: null
+notex_batch_size: null
+log_int: 20
+batch_size: 64
+TV_weight: 0.000001
+
+shape_lr: 0.01
+texture_lr: 0.01
+displacement_lr: 0.0001
+
+# Blurs the textures
+blur_epochs: null  # if blur = True, will default to all epochs
+blur: true
+blur_kernel:
+#- 11
+#- 11
+- 1
+- 1
+blur_sigma:
+#- 5
+#- 5
+- 1
+- 1
+
+optim: # from [shape, texture, normal, specular, displacement]
+- shape
+- texture
+- normal
+- displacement
+#- specular
+
+subdivision: 1  # 0 = no subdivision surface + no displacement map, each +1 quadruples the count
+laplacian: true
+laplacian_factor: 10  # CLIPMesh paper recommends between 10-50
+laplacian_on_fine_mesh: false  # Whether to apply regulariation to base mesh or subdivided mesh
+
+options: # from [face, full, back]
+- main
+
+# Randomize the camera parameters
+# Choose a random:
+#   - elevation ("sample from a Beta distribution with a=1.0 and B=5.0 within a range 0 to 100")
+#   - azimuth ("uniformly sample azimuth from 0 to 360")
+#   - distance ("distance of the camera from the object is set to 5.0 in our examples")
+#   - and FOV ("randomly selecting a camera field of view between 30 to 60")
+# Also, choose a random:
+#   - object offset (no further details in the paper, use CLIP-SMPLX default which is (0.0,0.15,0.0) for "full")
+#   - random background
+cameras:
+  main:
+    azim:
+    - 0.0
+    - 360.0
+    dist:
+    - 5.0
+    - 5.0
+    elev:
+    - 0.0
+    - 100.0
+    fov:
+    - 30.0
+    - 60.0
+    offset:
+    - 0.0
+    - 0.15
+    - 0.0
