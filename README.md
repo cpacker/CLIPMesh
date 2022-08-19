@@ -36,9 +36,17 @@ python clipmesh.py --text "a cowboy hat"
 ```
 ![image](https://user-images.githubusercontent.com/5475622/185278786-7b08b149-4d53-4917-b211-4a478467adc4.png)
 
-Note that config file `configs/arxiv.yaml` intends to mimic the algorithm described in the paper as closely as possibly (there currently is no official public implementation). 
-The default config (loaded w/o a `--path` arg) has a few differences, e.g., the use of a TV weight on the texture maps (used in the CLIPMesh-SMPLX repo), and negative prompts for "face" and "text" (without them, I found CLIP had a tendency to "stamp" faces and text into textures as well as geometry).
-`configs/improved.yaml` has more experimental changes with the goal of matching the performance in the paper (i.e., creating reasonable looking objects for all the the prompts shown in the paper and website).
+### Options
+
+- The config file `configs/arxiv.yaml` intends to mimic the algorithm described in the paper as closely as possibly (there currently is no official public implementation). 
+- The default config (loaded w/o a `--path` arg) has a few differences, e.g., the use of a TV weight on the texture maps (used in the CLIPMesh-SMPLX repo), and negative prompts for "face" and "text" (without them, I found CLIP had a tendency to "stamp" faces and text into textures as well as geometry).
+- `configs/improved.yaml` has more experimental changes with the goal of matching the performance in the paper (i.e., creating reasonable looking objects for all the the prompts shown in the paper and website).
+
+To override a setting from the config file, simple pass the setting as an extra argument:
+```sh
+# To see all options:
+python clipmesh.py --help
+```
 
 ### Example prompts
 
