@@ -2,7 +2,7 @@
 
 This is an unofficial implementation of CLIPMesh (https://arxiv.org/abs/2203.13333), a method for text2mesh using CLIP. This repo is based on [CLIPMesh-SMPLX](https://github.com/NasirKhalid24/CLIPMesh-SMPLX) and uses [nvdiffmodeling](https://github.com/NVlabs/nvdiffmodeling) for differentiable mesh rendering.
 
-The results generated using this repo are currently hit-or-miss: for the example prompts shown in the paper and on the website, some results are significantly worse than those shown on the website/paper, but some are comparable. Final mesh quality is not great but it seems to be comparable to Figure 3(i) and (j) in the paper. If you have any suggestions or find any particularly good hyperparameters feel free to open an issue or PR and I'll gladly merge them in.
+The results generated using this repo are currently hit-or-miss: for the example prompts shown in the paper and on the website, some results are significantly worse than those shown on the website/paper, but some are comparable. Final mesh quality is not great but it seems to be comparable to Figure 3(i) and (j) in the paper. For details on how this implementation may vary from the paper, see the [Issues page](https://github.com/cpacker/CLIPMesh/issues/1). If you have any suggestions or find any particularly good hyperparameters feel free to open an issue or PR and I'll gladly merge them in.
 
 ## Install
 
