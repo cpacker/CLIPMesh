@@ -25,16 +25,18 @@ pip install -r requirements.txt
 Example with a prompt from the paper that works well:
 
 ```sh
-python main_sphere.py --path=configs/improved.yaml --text "a matte painting of a bonsai tree; trending on artstation"
+python clipmesh.py --text "a matte painting of a bonsai tree; trending on artstation"
 ```
 
 Example with a prompt from the paper that is significantly worse:
 
 ```sh
-python main_sphere.py --path=configs/improved.yaml --text "a red chair"
+python clipmesh.py --text "a red chair"
 ```
 
-Note that config file `configs/arxiv.yaml` intends to mimic the algorithm described in the paper as closely as possibly (there currently is no official public implementation), while `configs/improved.yaml` has a handful of changes that seem to improve performance on the example prompts.
+Note that config file `configs/arxiv.yaml` intends to mimic the algorithm described in the paper as closely as possibly (there currently is no official public implementation). 
+The default config (loaded w/o a `--path` arg) has a few differences, e.g., the use of a TV weight on the texture maps (used in the CLIPMesh-SMPLX repo), and negative prompts for "face" and "text" (without them, I found CLIP had a tendency to "stamp" faces and text into textures as well as geometry).
+`configs/improved.yaml` has more experimental changes with the goal of matching the performance in the paper (i.e., creating reasonable looking objects for all the the prompts shown in the paper and website).
 
 ### Example prompts
 
